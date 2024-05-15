@@ -1,0 +1,127 @@
+<!--
+ * @Author: dx3906
+ * @Date: 2020-10-28 13:47:20
+ * @LastEditors: dx3906
+ * @LastEditTime: 2020-12-17 10:31:41
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>《明日方舟》剧情回放</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js">
+    </script>
+    <script>
+        let assetsResourceFrom = "coding";
+        let doctorName = "博士";
+        let nicknamepool = ['不能', 'Ediart', 'zeg', 'Mr.quin', 'ywwuyi', '凯露', '奥尔加·伊兹卡', '黎笋', '彩崎优', '庞巨血口龙', '魔血提勃', '窃冠瓯柯', 'OG.Ana', 'UMP45', '来去之间'];
+
+        function start_story(story_file, story_name) {
+            if (!$("#doctorname").get(0).value) {
+                $("#doctorname").get(0).value = nicknamepool[Math.floor((Math.random() * nicknamepool.length))];
+            }
+            doctorName = $("#doctorname").get(0).value;
+            window.open(`./static/canvas.html?story=${story_file}&res=${assetsResourceFrom}&doctorname=${doctorName}&storyname=${story_name}`, '_blank')
+        };
+
+        $(document).ready(function () {
+
+            $(".options").css("display", "inline-block");
+
+            $("#storyinfo_on").click(function () {
+                $(".story_info").show();
+            });
+            $("#storyinfo_off").click(function () {
+                $(".story_info").hide();
+            });
+
+            $("#resource_coding").click(function () {
+                assetsResourceFrom = "coding";
+            });
+            $("#resource_github").click(function () {
+                assetsResourceFrom = "github";
+            });
+            $("#resource_local").click(function () {
+                assetsResourceFrom = "local";
+            });
+
+            $("#randomname").click(function () {
+                $("#doctorname").get(0).value = nicknamepool[Math.floor((Math.random() * nicknamepool.length))];
+                console.log($("#doctorname").get(0).value);
+            })
+
+
+        });
+    </script>
+    <style>
+        .story_content {
+            max-width: 800px;
+            min-width: 400px;
+            height: 120px;
+        }
+
+        .story_title {
+            width: 120px;
+            font-weight: bold;
+        }
+
+        .options {
+            display: none;
+            vertical-align: top;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        .story_info {
+            display: none;
+        }
+
+        .menu {
+            border: 1px solid #a2a9b1;
+            background-color: #f8f9fa;
+            padding: 5px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>《明日方舟》剧情回放</h1>
+    你可以在这里观看已有的SideStory剧情、故事集剧情、主线剧情和未列出的剧情。
+    <br>
+    你需要一个支持ES6的现代浏览器（Chrome、Firefox、Opera、Safari等）才能正常运行本工具。<a
+        href="http://ruanyf.github.io/es-checker/">在这里</a>查看你的浏览器对ES6的支持程度。
+    <br>
+    上一次更新：更新时间
+    <hr>
+    <h3>设置</h3>
+    <div class="options">
+        素材源
+        <br>
+        <input type="radio" id="resource_coding" name="resource" checked>CODING
+        <br>
+        <input type="radio" id="resource_github" name="resource">Github（备用，速度较慢）
+        <br>
+        <input type="radio" id="resource_local" name="resource">本地（测试用）
+    </div>
+    <div class="options">
+        剧情简介
+        <br>
+        <input type="radio" id="storyinfo_off" name="storyinfo" checked>关闭
+        <br>
+        <input type="radio" id="storyinfo_on" name="storyinfo">打开
+    </div>
+    <div class="options">
+        你的名字：
+        <br>
+        Dr. <input type="text" id="doctorname" style="width:100px" value="博士">
+        <br>
+        <input type="button" id="randomname" value="随机名字">
+    </div>
+    <hr>
+    在这里填入内容
+</body>
+
+</html>

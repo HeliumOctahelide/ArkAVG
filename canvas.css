@@ -1,0 +1,132 @@
+#playground {
+	position: relative;
+	width: 1280px;
+	height: 720px;
+	border: 1px solid #FFFFFF;
+	left: 0px;
+	top: 0px;
+	background-color: #000000;
+	overflow: hidden;
+}
+
+#origin_point {
+	position: absolute;
+	top: 360px;
+	left: 640px;
+	width: 1px;
+	height: 1px;
+}
+
+#loadingdiv {
+	font-family: '黑体';
+	font-size: 36px;
+	position: fixed;
+	color: white;
+	background-color: black;
+	left: 50px;
+	top: 100px;
+	white-space: pre-wrap;
+}
+
+#review {
+	top: 0px;
+	left: 500px;
+	height: 720px;
+	position: absolute;
+	overflow: auto;
+	color: #FFFFFF;
+	display: none;
+	border-style: solid;
+	border-color: #ffffff;
+	background-color: #000000;
+}
+
+
+.picture {
+	position: absolute;
+	display: none;
+	height: 720px;
+	width: 1280px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.character {
+	position: absolute;
+	display: none;
+	height: 720px;
+	width: 1280px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+#block {
+	display: block;
+	opacity: 0;
+}
+
+#textbox {
+	position: absolute;
+	height: 240px;
+	width: 1280px;
+	top: 120px;
+	left: -640px;
+	margin: 0px;
+}
+
+#textboxgradienttop {
+	position: absolute;
+	height: 120px;
+	width: 1280px;
+	top: -520px;
+	left: 0px;
+	margin: 0px;
+	background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+}
+
+#textboxgradientbottom {
+	position: absolute;
+	height: 180px;
+	width: 1280px;
+	top: 60px;
+	left: 0px;
+	margin: 0px;
+	background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+}
+
+#text {
+	font-family: "思源黑体", "黑体";
+	font-size: 24px;
+	color: white;
+	height: 24px;
+	width: 732px;
+	position: absolute;
+	top: 160px;
+	left: 300px; 
+}
+
+#textname {
+	font-family: "思源黑体", "黑体";
+	font-size: 28px;
+	color: gray;
+	position: relative;
+	width: 280px;
+	text-align: right;
+	float: left;
+	top: 158px;
+}
+
+.select {
+	font-family: "思源黑体", "黑体";
+	font-size: 24px;
+	text-align:	center;
+	color: white;
+	background-color: rgb(90, 90, 90);
+	border:2px solid white;
+	position: relative;
+	width: 640px;
+	left: -332px;
+	padding: 8px;
+}

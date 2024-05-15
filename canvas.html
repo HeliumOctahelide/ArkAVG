@@ -1,0 +1,59 @@
+<!--
+ * @Author: dx3906
+ * @Date: 2020-10-28 13:16:35
+ * @LastEditors: dx3906
+ * @LastEditTime: 2020-12-10 01:25:23
+-->
+<!DOCTYPE html>
+<html style='background-color: #333333;'>
+
+<head>
+    <meta charset="utf-8">
+    <title>加载内容...</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery-color/2.1.2/jquery.color.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/typed.js/2.0.9/typed.min.js"></script>
+    <script src='./main.R.js'></script>
+    <link rel="stylesheet" type="text/css" href="canvas.css" />
+</head>
+
+<body>
+    <div id="headbar" style="position: relative; color: #FFFFFF">
+        你的名字：<input type="text" id="inputname">
+        <input type="button" id="setname" onclick="setname()" value='确定'>
+        <input type="button" id="randomname" onclick="setRandomName()" value='随机名字'>
+        <input type="button" id="showtext" onclick="showText()" value='显示/隐藏文本'>
+        <input type="button" id="auto" onclick="auto()" value='自动播放'>
+
+    </div>
+    <hr>
+    <div onclick='beginStory()' id="playground">
+        <div id="origin_point">
+            <img class="picture" id='background'></img>
+            <img class="character" id='char1'></img>
+            <img class="character" id='char2'></img>
+            <img class="picture" id='charci1' style='object-fit: cover'></img>
+            <img class="picture" id='charci2' style='object-fit: cover'></img>
+            <img class="picture" id='img'></img>
+            <img class="picture" id='item'></img>
+            <img class="picture" id='block'></img>
+            <div id='textbox'>
+                <div id="textboxgradienttop"></div>
+                <div id="textboxgradientbottom"></div>
+                <div id='textname'></div><div id='text'></div>
+            </div>
+            <div id='selectbox'></div>
+        </div>
+    </div>
+    <div id="audioground">
+        <audio id="music"></audio>
+        <audio id="sound"></audio>
+    </div>
+    <div id="loadingdiv">
+        <span id='loadingres'></span>
+    </div>
+    <pre id="review"></pre>
+</body>
+
+</html>
